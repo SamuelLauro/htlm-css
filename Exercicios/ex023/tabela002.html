@@ -9,29 +9,54 @@
         body{
             font-family: Arial, Helvetica, sans-serif;
         }
+        h1{
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+        }
         table{
             width: 500px;
             border-collapse: collapse;
+            position: relative;
+        }
+        caption{
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightcyan;
+            border: 1px solid black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: lighter; 
         }
         th{
             border: 1px solid black;
+            padding: 8px;
         }
         td{
             border: 1px solid black;
             text-align: center;
-            padding: 8px;
+            padding: 6px;
         }
-        thead{
-            background-color: gray;
+        thead, tfoot{
+            background-color: teal;
+            color: white;
+        }
+        thead > tr > th{
+            position: sticky;
+            top: -1px;
+            background-color: teal; 
             color: white;
         }
         tbody{
             background-color: aliceblue;
         }
-        tfoot{
-            background-color: gray;
-            color: white;
+        tbody > tr:nth-child(even){
+            background-color: lightyellow;
+            
         }
+        tbody > tr:nth-child(odd){
+            background-color: lightgreen;
+        }
+    
         td.num{
             text-align: right;
         }
@@ -42,6 +67,7 @@
     <!--
         ANATOMIA PARA TABELAS GRANDES
         TABLE
+            CAPTION
             THEAD
                 TR, TD, TH
             TBODY
@@ -50,10 +76,11 @@
                 TR, TD, TH
     -->
     <table> 
+        <caption>Poupulação das Unidades Brasileiras</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col" >Estado</th>
+                <th scope="col"style="width: 100px">População</th>
             </tr>
         </thead>
             
@@ -170,8 +197,8 @@
 
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
-                <td><strong>207 291 607</strong></td>
+                <th scope="row">Total de Habitantes</th>
+                <td class="num"><strong>207 291 607</strong></td>
             </tr>
         </tfoot>
     </table>
